@@ -1,0 +1,14 @@
+:root {
+    --size: 1.3;
+}
+.terminal {
+  --color: white;
+  --background: black;
+  --link-color: darkblue;
+}
+.cmd {
+    --color: white;
+}
+.cmd-prompt {
+    --color: purple;
+}
