@@ -6,8 +6,21 @@
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/win98.css">
+    <!--<link rel="stylesheet" href="https://unpkg.com/xp.css/dist/98.css"> https://unpkg.com/xp.css-->
 
+    <header>
+      <div class="title-bar">
+        <div class="title-bar-text">A Title Bar</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+    </header>
   </head>
+
   <body style="background-color:black;" oncontextmenu="return false">
   <template id="greetings">
 [[g;purple;black]
@@ -68,5 +81,17 @@ Type "[[i;purple;black]help]" to show commands
       });
     </script>
   </body>
+
+  <footer>
+    <div class="status-bar">
+      <p class="status-bar-field">Press F1 for help</p>
+      <p class="status-bar-field">RAM Usage: 12%</p>
+      <p class="status-bar-field">CPU Usage: 14%</p>
+    </div>
+  </footer>
+
 </html>
-<!-- https://html-css-js.com/html/character-codes/ -->
+<!--  https://html-css-js.com/html/character-codes/
+      https://github.com/AlexBSoft/win95.css Footer and header
+      https://botoxparty.github.io/XP.css/
+-->
