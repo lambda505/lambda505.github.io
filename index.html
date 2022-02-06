@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Terminal -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/win98.css">
+    <link rel="stylesheet" href="css/cube.css">
+    <link rel="stylesheet" href="css/parallax.css">
+    <link rel="stylesheet" href="css/crt.css">
     <!--<link rel="stylesheet" href="https://unpkg.com/xp.css/dist/98.css"> https://unpkg.com/xp.css-->
-
     <header>
       <div class="title-bar">
         <div class="title-bar-text">A website i guess ?</div>
@@ -20,68 +21,78 @@
       </div>
     </header>
   </head>
+  <div id="parallax">
 
-  <body style="background-color:black;" oncontextmenu="return false">
-  <template id="greetings">
-[[g;purple;black]
-      (
-      )\ )                 )   (       (  (      ) (  (
-      (()/(    )    )    ( /(   )\ )   ))\))(  ( /( )\))(
-      /(_))( /(   (     )\()) (()/(( /((_)()\ )\()|(_)()\
-      (_))  )(_))  )\  '((_)\   ((_))(_)|()((_|(_)\ (()((_)
-      | |  ((_)_ _((_)) | |(_)  _| ((_)_ | __|/  (_) | __|
-      | |__/ _` | '  \()| '_ \/ _` / _` ||__ \ () |  |__ \
-      |____\__,_|_|_|_| |_.__/\__,_\__,_||___/\__/   |___/
-
-]
-Type "[[i;purple;black]help]" to show commands
-    </template>
-
-    <!-- Terminal Header anim -->
-    <div align="center">
-      <!--<iframe src="anim_pages/eva_eye_anim_colors.html" width="577" height="310"></iframe>-->
-      <iframe src="anim_pages/eva_eye_anim_colors.html" width="577" height="310"></iframe>
-      <!-- <iframe src="anim_pages/ramiel.html" width="210" height="265"></iframe> -->
-      <!--<iframe src="anim_pages/eva_eye_anim_colors.html" width="577" height="310"></iframe>-->
+    <div class="buzz_wrapper">
+      <div class="text">
+      <span>/var/www/html/index.html</span>
+      </div>
+      <div class="scanline"></div>
     </div>
-    <!-- Terminal commands -->
-    <script>
-      $.get('https://unpkg.com/emoji-datasource').then($.terminal.emoji);
+
+    <!--Change the parallax images to geometric transparents cuts-->
+    <script src="./script/parallax.js"></script>
+    <script src="./script/crt.js"></script>
+
+    <body oncontextmenu="return false">
+        <div class="container">
+          <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+        </div>
+
+        <console style="background-color:black;" oncontextmenu="return false">
+        <template id="greetings">
+  [[g;white;black]
+      __                    __        __      __________  ______
+     / /   ____ _____ ___  / /_  ____/ /___ _/ ____/ __ \/ ____/
+    / /   / __ `/ __ `__ \/ __ \/ __  / __ `/___ \/ / / /___ \
+   / /___/ /_/ / / / / / / /_/ / /_/ / /_/ /___/ / /_/ /___/ /
+  /_____/\__,_/_/ /_/ /_/_.___/\__,_/\__,_/_____/\____/_____/
+
+  ]
+  Type "[[i;white;black]help]" to show commands
+        </template>
+          <script>
+            $('console').terminal({
 
 
-      $('body').terminal({
+                help: function(...args) {
+                    this.echo("\n"+"Commands list:"+"\n\n"+
+                              "     🎱[[i;blue;black]help]"+"                   "+"Show all commands"+"\n\n"+
+                              "     🎮[[i;blue;black]games]"+"                  "+"Link to my games"+"\n"+
+                              "     💾[[i;blue;black]dev]"+"                    "+"List all projects"+"\n\n"
+                              );
+                },
+                clear: function(...args) {
+                    this.clear();
+                },
+                games: function(...args) {
+                    this.echo("\n"+
+                              "     ⬜https://lambda505.itch.io/star-mission\n           Game made for the 139 Weekly Game Jam with [[g;darkblue;black]Akidg]"+"\n\n"+
+                              "     🔻Bullet Speed (WIP)\n            Old School fast paced FPS with the help(ideas) of [[g;darkblue;black]G&W brr brr]"+"\n"
+                              );
+                },
+                dev: function(...args) {
+                    this.echo("\n"+
+                              "     ⚪http://gaw.42web.io/"+"                              "+"?????"+"\n"+
+                              "     ⚪https://github.com/lambda505/CSRcrypto_chat"+"       "+"RSA Encrypted messagerie"+"\n"
 
+                    );
+                },
 
-          help: function(...args) {
-              this.echo("\n"+"Commands list:"+"\n\n"+
-                        "     🎱[[i;purple;black]help]"+"                                              "+"Show all commands"+"\n\n"+
-                        "     🎮[[i;purple;black]games]"+"                                             "+"Link to my games"+"\n"+
-                        "     💾[[i;purple;black]dev]"+"                                               "+"List all projects"+"\n\n"
-                        );
-          },
-          clear: function(...args) {
-              this.clear();
-          },
-          games: function(...args) {
-              this.echo("\n"+
-                        "     ⬜https://lambda505.itch.io/star-mission"+"            "+"Game made for the 139 Weekly Game Jam with [[g;purple;black]Akidg]"+"\n"+
-                        "     🔻Bullet Speed (WIP)"+"                                "+"Old School fast paced FPS with the help(ideas) of [[g;purple;black]G&W brr brr]"+"\n"
-                        );
-          },
-          dev: function(...args) {
-              this.echo("\n"+
-                        "     ⚪http://gaw.42web.io/"+"                              "+"?????"+"\n"+
-                        "     ⚪https://github.com/lambda505/CSRcrypto_chat"+"       "+"RSA Encrypted messagerie"+"\n"
-
-              );
-          },
-
-      }, {
-          greetings: greetings.innerHTML
-      });
-    </script>
-  </body>
-
+            }, {
+              greetings: greetings.innerHTML
+            });
+          </script>
+        </console>
+    </body>
+  </div>
   <footer>
     <div class="status-bar">
       <p class="status-bar-field">Press F1 for help</p>
@@ -91,7 +102,3 @@ Type "[[i;purple;black]help]" to show commands
   </footer>
 
 </html>
-<!--  https://html-css-js.com/html/character-codes/
-      https://github.com/AlexBSoft/win95.css Footer and header
-      https://botoxparty.github.io/XP.css/
--->
