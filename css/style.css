@@ -158,6 +158,11 @@ body {
   text-align: center;
   justify-content: center;
   cursor: pointer;
+  border: none;
+}
+
+.desktop-icon:active{
+  border: 1px #000 dotted;
 }
 
 .desktop-icon img {
